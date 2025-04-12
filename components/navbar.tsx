@@ -70,8 +70,9 @@ export const Navbar = () => {
         )}
       </div>
 
+      <div>
       {mobileMenu ? (
-        <div className="bg-white min-h-screen h-full w-full p-8 pt-[100px] flex flex-col gap-8 text-lg">
+        <div className="bg-white min-h-screen w-full p-8 pt-[100px] flex flex-col gap-8 text-lg">
           <div className="cursor-pointer hover:text-primary">Поиск</div>
           <div className="cursor-pointer hover:text-primary">
             Мемориалы памяти
@@ -87,6 +88,8 @@ export const Navbar = () => {
           </div>
         </div>
       ) : null}
+      </div>
+      
     </>
   );
 };
