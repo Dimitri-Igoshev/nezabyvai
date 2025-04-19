@@ -8,11 +8,26 @@ import { IoCloseOutline } from "react-icons/io5";
 import { ROUTES } from "@/app/routes";
 import { useEffect, useState } from "react";
 import { cn } from "@heroui/theme";
+import { SearchModal } from "./search-modal";
+import { useDisclosure } from "@heroui/react";
+import { useTheme } from "next-themes";
 
 export const Navbar = () => {
   const router = useRouter();
 
+  const { theme, setTheme } = useTheme();
   const [mobileMenu, setMobileMenu] = useState(false);
+
+  useEffect(() => {
+    setTheme("light")
+  }, [])
+  
+
+  const {
+    isOpen: isSearch,
+    onOpen: onSearch,
+    onOpenChange: onSearchChange,
+  } = useDisclosure();
 
   useEffect(() => {
     if (mobileMenu) {
@@ -40,7 +55,7 @@ export const Navbar = () => {
         />
 
         <div className="hidden lg:flex items-center gap-10 text-sm pr-3">
-          <div className="cursor-pointer hover:text-primary">Поиск</div>
+          <div className="cursor-pointer hover:text-primary" onClick={onSearch}>Поиск</div>
           <div className="cursor-pointer hover:text-primary">
             Мемориалы памяти
           </div>
@@ -73,7 +88,7 @@ export const Navbar = () => {
       <div>
       {mobileMenu ? (
         <div className="bg-white min-h-screen w-full p-8 pt-[100px] flex flex-col gap-8 text-lg">
-          <div className="cursor-pointer hover:text-primary">Поиск</div>
+          <div className="cursor-pointer hover:text-primary" onClick={onSearch}>Поиск</div>
           <div className="cursor-pointer hover:text-primary">
             Мемориалы памяти
           </div>
@@ -89,7 +104,8 @@ export const Navbar = () => {
         </div>
       ) : null}
       </div>
-      
+
+      <SearchModal isOpen={isSearch} onOpenChange={onSearchChange} />
     </>
   );
 };

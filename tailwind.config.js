@@ -20,7 +20,27 @@ const config = {
     },
   },
   darkMode: "class",
-  plugins: [heroui()],
+  plugins: [heroui({
+    defaultTheme: 'light',
+			themes: {
+				light: {
+					layout: {
+						hoverOpacity: 1,
+					},
+					colors: {
+						focus: 'transparent',
+					},
+				},
+        dark: {
+					layout: {
+						hoverOpacity: 1,
+					},
+					colors: {
+						focus: 'transparent',
+					},
+				},
+			},
+  })],
 }
 
 module.exports = config;
