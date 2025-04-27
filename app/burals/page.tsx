@@ -37,7 +37,7 @@ const BuralsPage = () => {
 	}, [searchParams]);
 
 	return (
-    <div className="container mx-auto flex flex-col mt-[80px] relative z-10">
+    <div className="container mx-auto flex flex-col mt-[80px] relative z-10 min-h-screen">
       Захоронения не найдены
     </div>
   );
