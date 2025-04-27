@@ -1,4 +1,5 @@
 import Link from "next/link";
+
 import { EmailIcon, PhoneIcon, TelegramIcon, WhatsAppIcon } from "./icons";
 
 export const Footer = () => {
@@ -9,22 +10,22 @@ export const Footer = () => {
           <p className="font-semibold">Ссылки</p>
 
           <div className="flex flex-wrap gap-2">
-            <Link href="#" className="hover:text-primary hover:underline mr-3">
+            <Link className="hover:text-primary hover:underline mr-3" href="#">
               Поиск
             </Link>
-            <Link href="#" className="hover:text-primary hover:underline mr-3">
+            <Link className="hover:text-primary hover:underline mr-3" href="#">
               Скачать приложение
             </Link>
-            <Link href="#" className="hover:text-primary hover:underline mr-3">
+            <Link className="hover:text-primary hover:underline mr-3" href="#">
               Как пользоваться
             </Link>
-            <Link href="#" className="hover:text-primary hover:underline mr-3">
+            <Link className="hover:text-primary hover:underline mr-3" href="#">
               Добавить захоронение
             </Link>
-            <Link href="#" className="hover:text-primary hover:underline mr-3">
+            <Link className="hover:text-primary hover:underline mr-3" href="#">
               Политика конфиденциальности
             </Link>
-            <Link href="#" className="hover:text-primary hover:underline mr-3">
+            <Link className="hover:text-primary hover:underline mr-3" href="#">
               Пользовательское соглашение
             </Link>
           </div>
@@ -36,45 +37,45 @@ export const Footer = () => {
           <div className="flex items-center gap-4">
             <div className="cursor-pointer group">
               <PhoneIcon
-                fill="#666666"
                 className="cursor-pointer block group-hover:hidden"
+                fill="#666666"
               />
               <PhoneIcon
-                fill="#00BFFF"
                 className="cursor-pointer hidden group-hover:block"
+                fill="#00BFFF"
               />
             </div>
 
             <div className="cursor-pointer group">
               <TelegramIcon
-                fill="#666666"
                 className="cursor-pointer block group-hover:hidden"
+                fill="#666666"
               />
               <TelegramIcon
-                fill="#00BFFF"
                 className="cursor-pointer hidden group-hover:block"
+                fill="#00BFFF"
               />
             </div>
 
             <div className="cursor-pointer group">
               <WhatsAppIcon
-                fill="#666666"
                 className="cursor-pointer block group-hover:hidden"
+                fill="#666666"
               />
               <WhatsAppIcon
-                fill="#00BFFF"
                 className="cursor-pointer hidden group-hover:block"
+                fill="#00BFFF"
               />
             </div>
 
             <div className="cursor-pointer group">
               <EmailIcon
-                fill="#666666"
                 className="cursor-pointer block group-hover:hidden"
+                fill="#666666"
               />
               <EmailIcon
-                fill="#00BFFF"
                 className="cursor-pointer hidden group-hover:block"
+                fill="#00BFFF"
               />
             </div>
           </div>

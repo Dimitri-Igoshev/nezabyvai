@@ -12,8 +12,9 @@ import {
   ModalHeader,
 } from "@heroui/react";
 import { I18nProvider } from "@react-aria/i18n";
-import { useGetTombsMutation } from "@/redux/services/buralApi";
 import { SubmitHandler, useForm } from "react-hook-form";
+
+import { useGetTombsMutation } from "@/redux/services/buralApi";
 
 type Inputs = {
   firstName: string;
@@ -42,11 +43,11 @@ export const SearchModal: FC<SearcModalProps> = ({ isOpen, onOpenChange }) => {
   const onSubmit: SubmitHandler<Inputs> = async (data) => {
     setIsLoading(true);
 
-    const body: any = {}
+    const body: any = {};
 
-    body.query = `${data.firstName} ${data.lastName}`
-    body.birthday = dateBirth
-    body.deathday = dateDeath
+    body.query = `${data.firstName} ${data.lastName}`;
+    body.birthday = dateBirth;
+    body.deathday = dateDeath;
 
     get(body)
       .unwrap()
@@ -61,12 +62,12 @@ export const SearchModal: FC<SearcModalProps> = ({ isOpen, onOpenChange }) => {
 
   return (
     <Modal
-      isOpen={isOpen}
-      size="sm"
-      placement="center"
       backdrop="blur"
-      onOpenChange={onOpenChange}
       className="light py-3"
+      isOpen={isOpen}
+      placement="center"
+      size="sm"
+      onOpenChange={onOpenChange}
     >
       <ModalContent>
         {(onClose) => (
@@ -97,24 +98,24 @@ export const SearchModal: FC<SearcModalProps> = ({ isOpen, onOpenChange }) => {
                   className=""
                   defaultValue=""
                   label="Фамилия"
-                  type="text"
                   placeholder="Иванов"
+                  type="text"
                   {...register("lastName")}
                 />
                 <Input
                   className=""
                   defaultValue=""
                   label="Имя"
-                  type="text"
                   placeholder="Иван"
+                  type="text"
                   {...register("firstName")}
                 />
                 <Input
                   className=""
                   defaultValue=""
                   label="Отчество"
-                  type="text"
                   placeholder="Иванович"
+                  type="text"
                   {...register("patronymic")}
                 />
               </div>
@@ -122,11 +123,11 @@ export const SearchModal: FC<SearcModalProps> = ({ isOpen, onOpenChange }) => {
             <ModalFooter>
               <div className="flex flex-col w-full">
                 <Button
-                  type="submit"
-                  color="primary"
                   className="w-full"
-                  size="lg"
+                  color="primary"
                   isLoading={isLoading}
+                  size="lg"
+                  type="submit"
                   onPress={() => {
                     onClose();
                   }}

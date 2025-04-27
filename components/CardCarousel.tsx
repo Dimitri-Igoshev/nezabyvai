@@ -4,6 +4,7 @@ import { cn } from "@heroui/theme";
 import { FunctionComponent } from "react";
 //@ts-ignore
 import Slider from "react-slick";
+
 import { RunningLineCard } from "./running-line-card";
 
 interface CardCarouselProps {

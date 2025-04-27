@@ -5,24 +5,24 @@ export const Download = () => {
     <div className="flex items-center gap-7">
       <Image
         alt=""
-        radius="none"
+        className="object-cover cursor-pointer hover:scale-110 transition-all"
         height={36}
+        radius="none"
         src="/apple.svg"
-        className="object-cover cursor-pointer hover:scale-110 transition-all"
       />
       <Image
         alt=""
-        radius="none"
+        className="object-cover cursor-pointer hover:scale-110 transition-all"
         height={36}
+        radius="none"
         src="/android.png"
-        className="object-cover cursor-pointer hover:scale-110 transition-all"
       />
       <Image
         alt=""
-        radius="none"
-        height={36}
-        src="/rustore.png"
         className="object-cover cursor-pointer hover:scale-110 transition-all"
+        height={36}
+        radius="none"
+        src="/rustore.png"
       />
     </div>
   );

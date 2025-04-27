@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-const API_URL = "https://nazabyvai.ru/kek"
+const API_URL = "https://nazabyvai.ru/kek";
 
 export const buralApi = createApi({
   reducerPath: "buralApi",
@@ -9,22 +9,23 @@ export const buralApi = createApi({
     baseUrl: `${API_URL}/tombs`,
     prepareHeaders: (headers, { getState }) => {
       // const token = store.getState().authReducer.token
-      const token = localStorage.getItem('access-token')
-      if (token) headers.set('Authorization', `Bearer ${token}`)
+      const token = localStorage.getItem("access-token");
 
-      return headers
+      if (token) headers.set("Authorization", `Bearer ${token}`);
+
+      return headers;
     },
   }),
-  tagTypes: ['Bural'],
+  tagTypes: ["Bural"],
   endpoints: (builder) => ({
     getTombs: builder.mutation({
       query: (body) => ({
-        url: '/search',
-        method: 'POST',
+        url: "/search",
+        method: "POST",
         body,
       }),
-    })
-  })
-})
+    }),
+  }),
+});
 
 export const { useGetTombsMutation } = buralApi;

@@ -13,11 +13,11 @@ export const RunningLineCard: FC<RunningLineCardProps> = ({
     <div className={cn("bg-white rounded-2xl p-2.5 flex gap-2.5", className)}>
       <Image
         alt=""
-        radius="lg"
-        height={100}
-        width={100}
-        src="/golubkina.jpeg"
         className="object-cover saturate-0"
+        height={100}
+        radius="lg"
+        src="/golubkina.jpeg"
+        width={100}
       />
 
       <div className="flex flex-col justify-between">
@@ -31,13 +31,15 @@ export const RunningLineCard: FC<RunningLineCardProps> = ({
         <div className="flex items-center gap-1">
           <Image
             alt=""
-            radius="full"
-            height={20}
-            width={20}
-            src="/route.svg"
             className="object-cover cursor-pointer"
+            height={20}
+            radius="full"
+            src="/route.svg"
+            width={20}
           />
-          <p className="text-[10px] cursor-pointer hover:text-primary">К месту захоронения</p>
+          <p className="text-[10px] cursor-pointer hover:text-primary">
+            К месту захоронения
+          </p>
         </div>
       </div>
     </div>

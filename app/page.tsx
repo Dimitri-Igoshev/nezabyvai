@@ -1,7 +1,8 @@
-import { RunningLineCard } from "@/components/running-line-card";
-import { HowUseSection } from "@/components/how-use";
 import { Image } from "@heroui/image";
 import Marquee from "react-fast-marquee";
+
+import { RunningLineCard } from "@/components/running-line-card";
+import { HowUseSection } from "@/components/how-use";
 import { Download } from "@/components/download";
 
 export default function Home() {
@@ -9,10 +10,10 @@ export default function Home() {
     <div className="">
       <Image
         alt=""
-        radius="none"
-        width={"100%"}
-        src="/nz-bg.png"
         className="object-fill w-full absolute -top-[80px] left-0 right-0 h-[800px]"
+        radius="none"
+        src="/nz-bg.png"
+        width={"100%"}
       />
 
       <div className="container mx-auto flex flex-col mt-[80px] relative z-10">
@@ -30,11 +31,11 @@ export default function Home() {
           <div className="object-cover absolute -bottom-[50px] right-[180px]">
             <Image
               alt=""
-              radius="none"
-              height={393}
-              width={300}
-              src="/iphone.png"
               className="hover:translate-x-3 transition-all"
+              height={393}
+              radius="none"
+              src="/iphone.png"
+              width={300}
             />
           </div>
 
@@ -43,7 +44,7 @@ export default function Home() {
       </div>
 
       <div className="mt-[40px] flex gap-5 w-full relative z-10">
-        <Marquee className="w-full h-full pt-[60px] -mb-10 pb-10" pauseOnHover>
+        <Marquee pauseOnHover className="w-full h-full pt-[60px] -mb-10 pb-10">
           <div className="gap-6 -mx-[0px] grid grid-cols-12 pl-6">
             {[...new Array(12)].map((item: any, idx: number) => (
               <RunningLineCard

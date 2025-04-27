@@ -4,13 +4,14 @@ import { useRouter } from "next/navigation";
 import { Image } from "@heroui/image";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import { IoCloseOutline } from "react-icons/io5";
-
-import { ROUTES } from "@/app/routes";
 import { useEffect, useState } from "react";
 import { cn } from "@heroui/theme";
-import { SearchModal } from "./search-modal";
 import { useDisclosure } from "@heroui/react";
 import { useTheme } from "next-themes";
+
+import { SearchModal } from "./search-modal";
+
+import { ROUTES } from "@/app/routes";
 
 export const Navbar = () => {
   const router = useRouter();
@@ -19,9 +20,8 @@ export const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
 
   useEffect(() => {
-    setTheme("light")
-  }, [])
-  
+    setTheme("light");
+  }, []);
 
   const {
     isOpen: isSearch,
@@ -41,21 +41,26 @@ export const Navbar = () => {
     <>
       <div
         className={cn(
-          "w-full p-6 rounded-b-2xl flex justify-between items-center bg-white fixed z-50"
+          "w-full p-6 rounded-b-2xl flex justify-between items-center bg-white fixed z-50",
         )}
       >
         <Image
           alt=""
-          radius="none"
-          height={30}
-          width={139}
-          src="/nz-logo.png"
           className="cursor-pointer"
+          height={30}
+          radius="none"
+          src="/nz-logo.png"
+          width={139}
           onClick={() => router.push(ROUTES.HOME)}
         />
 
         <div className="hidden lg:flex items-center gap-10 text-sm pr-3">
-          <div className="cursor-pointer hover:text-primary" onClick={onSearch}>Поиск</div>
+          <button
+            className="cursor-pointer hover:text-primary"
+            onClick={onSearch}
+          >
+            Поиск
+          </button>
           <div className="cursor-pointer hover:text-primary">
             Мемориалы памяти
           </div>
@@ -86,23 +91,28 @@ export const Navbar = () => {
       </div>
 
       <div>
-      {mobileMenu ? (
-        <div className="bg-white min-h-screen w-full p-8 pt-[100px] flex flex-col gap-8 text-lg">
-          <div className="cursor-pointer hover:text-primary" onClick={onSearch}>Поиск</div>
-          <div className="cursor-pointer hover:text-primary">
-            Мемориалы памяти
+        {mobileMenu ? (
+          <div className="bg-white min-h-screen w-full p-8 pt-[100px] flex flex-col gap-8 text-lg">
+            <button
+              className="cursor-pointer hover:text-primary"
+              onClick={onSearch}
+            >
+              Поиск
+            </button>
+            <div className="cursor-pointer hover:text-primary">
+              Мемориалы памяти
+            </div>
+            <div className="cursor-pointer hover:text-primary">
+              Скачать приложение
+            </div>
+            <div className="cursor-pointer hover:text-primary">
+              Как пользоваться
+            </div>
+            <div className="cursor-pointer hover:text-primary">
+              Добавить захоронение
+            </div>
           </div>
-          <div className="cursor-pointer hover:text-primary">
-            Скачать приложение
-          </div>
-          <div className="cursor-pointer hover:text-primary">
-            Как пользоваться
-          </div>
-          <div className="cursor-pointer hover:text-primary">
-            Добавить захоронение
-          </div>
-        </div>
-      ) : null}
+        ) : null}
       </div>
 
       <SearchModal isOpen={isSearch} onOpenChange={onSearchChange} />

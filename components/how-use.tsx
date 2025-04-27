@@ -1,5 +1,6 @@
 import { FunctionComponent } from "react";
 import { Image } from "@heroui/image";
+
 import { Download } from "./download";
 
 export const HowUseSection: FunctionComponent = ({}) => {
@@ -13,10 +14,10 @@ export const HowUseSection: FunctionComponent = ({}) => {
       <div className="flex justify-center items-center group">
         <Image
           alt=""
+          className="group-hover:translate-x-5 transition-all w-4/5 xl:w-full"
           radius="none"
           // height={843}
           src="/step1.png"
-          className="group-hover:translate-x-5 transition-all w-4/5 xl:w-full"
         />
 
         <div className="flex flex-col bg-primary p-[40px] xl:p-[60px] rounded-[50px] -ml-[190px] xl:-ml-[140px] pl-[80px] xl:pl-[140px] text-white w-2/3">
@@ -61,8 +62,8 @@ export const HowUseSection: FunctionComponent = ({}) => {
           radius="none"
           // height={843}
           // width={"100%"}
-          src="/step2.png"
           className="group-hover:-translate-x-5 transition-all w-4/5 xl:w-full"
+          src="/step2.png"
         />
       </div>
 
@@ -72,8 +73,8 @@ export const HowUseSection: FunctionComponent = ({}) => {
           radius="none"
           // height={843}
           // width={"100%"}
-          src="/step3.png"
           className="group-hover:translate-x-5 transition-all w-4/5 xl:w-full"
+          src="/step3.png"
         />
 
         <div className="flex flex-col bg-primary p-[40px] xl:p-[60px] rounded-[50px] -ml-[210px] xl:-ml-[140px] pl-[80px] xl:pl-[140px] text-white w-2/3">

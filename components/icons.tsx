@@ -189,12 +189,12 @@ export const SearchIcon = (props: IconSvgProps) => (
 export const PhoneIcon = ({ fill, className, ...props }: any) => (
   <svg
     aria-hidden="true"
+    className={className}
     focusable="false"
     height="33px"
     role="presentation"
     viewBox="0 0 33 33"
     width="33px"
-    className={className}
     {...props}
   >
     <path
@@ -207,15 +207,15 @@ export const PhoneIcon = ({ fill, className, ...props }: any) => (
 export const EmailIcon = ({ fill, className, ...props }: any) => (
   <svg
     aria-hidden="true"
+    className={className}
     focusable="false"
     height="33px"
     role="presentation"
     viewBox="0 0 33 33"
     width="33px"
-    className={className}
     {...props}
   >
-    <circle cx="16.5" cy="16.5" r="16.5" fill={fill} />
+    <circle cx="16.5" cy="16.5" fill={fill} r="16.5" />
     <path
       d="M25 11.75C25 10.7875 24.235 10 23.3 10H9.7C8.765 10 8 10.7875 8 11.75V22.25C8 23.2125 8.765 24 9.7 24H23.3C24.235 24 25 23.2125 25 22.25V11.75ZM23.3 11.75L16.5 16.125L9.7 11.75H23.3ZM23.3 22.25H9.7V13.5L16.5 17.875L23.3 13.5V22.25Z"
       fill="white"
@@ -226,12 +226,12 @@ export const EmailIcon = ({ fill, className, ...props }: any) => (
 export const TelegramIcon = ({ fill, className, ...props }: any) => (
   <svg
     aria-hidden="true"
+    className={className}
     focusable="false"
     height="40px"
     role="presentation"
     viewBox="0 0 40 40"
     width="40px"
-    className={className}
     {...props}
   >
     <path
@@ -244,19 +244,19 @@ export const TelegramIcon = ({ fill, className, ...props }: any) => (
 export const WhatsAppIcon = ({ fill, className, ...props }: any) => (
   <svg
     aria-hidden="true"
+    className={className}
     focusable="false"
     height="33px"
     role="presentation"
     viewBox="0 0 33 33"
     width="33px"
-    className={className}
     {...props}
   >
     <path
-      fillRule="evenodd"
       clipRule="evenodd"
       d="M16.5032 0C7.38847 0 0 7.38847 0 16.5032C0 19.6223 0.866416 22.5433 2.37316 25.032L0.901073 30.0358C0.816551 30.323 0.81099 30.6278 0.884973 30.918C0.958956 31.2082 1.10975 31.4731 1.32151 31.6848C1.53326 31.8966 1.79815 32.0474 2.08834 32.1214C2.37852 32.1953 2.68328 32.1898 2.97057 32.1053L7.97433 30.6332C10.5467 32.1893 13.4967 33.0102 16.5032 33.0063C25.6179 33.0063 33.0063 25.6179 33.0063 16.5032C33.0063 7.38847 25.6179 0 16.5032 0ZM12.7701 20.2378C16.1087 23.5748 19.2955 24.0154 20.421 24.0567C22.1324 24.1194 23.7992 22.8123 24.4478 21.2957C24.529 21.1069 24.5583 20.8998 24.5328 20.6959C24.5073 20.4919 24.4278 20.2985 24.3026 20.1355C23.3982 18.9803 22.1753 18.1502 20.9805 17.325C20.7311 17.1521 20.4245 17.0827 20.125 17.1313C19.8255 17.18 19.5565 17.3429 19.3747 17.5858L18.3845 19.0958C18.3322 19.1767 18.2511 19.2346 18.1576 19.2579C18.0642 19.2812 17.9653 19.2681 17.8812 19.2212C17.2095 18.8367 16.2309 18.1832 15.5278 17.4802C14.8248 16.7771 14.2109 15.843 13.866 15.2143C13.8242 15.1342 13.8124 15.0418 13.8327 14.9538C13.853 14.8657 13.904 14.7878 13.9765 14.734L15.5014 13.6019C15.7197 13.4131 15.8606 13.1504 15.8971 12.8641C15.9337 12.5779 15.8633 12.2882 15.6995 12.0506C14.9601 10.968 14.0987 9.59164 12.8494 8.67901C12.6878 8.56293 12.499 8.49054 12.3012 8.46885C12.1034 8.44717 11.9034 8.47692 11.7205 8.55524C10.2023 9.20546 8.8886 10.8723 8.95132 12.587C8.99257 13.7125 9.43321 16.8992 12.7701 20.2378Z"
       fill={fill}
+      fillRule="evenodd"
     />
   </svg>
 );
