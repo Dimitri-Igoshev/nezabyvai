@@ -33,10 +33,14 @@ const BuralsPage = () => {
 
     getBurals();
 
-    console.log(burals)
+    console.log(burals);
 	}, [searchParams]);
 
-	return <div className="min-h-screen pt-[100px]">BuralsPage</div>;
+	return (
+    <div className="container mx-auto flex flex-col mt-[80px] relative z-10">
+      Захоронения не найдены
+    </div>
+  );
 };
 
 export default BuralsPage;
