@@ -41,7 +41,7 @@ export const SearchModal: FC<SearcModalProps> = ({ isOpen, onOpenChange }) => {
 
 	const onSubmit: SubmitHandler<Inputs> = async (data) => {
 		router.push(
-			`/burals/?query=${data.firstName + " " + data.lastName}&birthday=${dateBirth}&deathday=${dateDeath}`
+			`/burals/?query=${data.firstName + " " + data.lastName + " " + data.patronymic}&birthday=${dateBirth || ""}&deathday=${dateDeath || ""}`
 		);
 	};
 
