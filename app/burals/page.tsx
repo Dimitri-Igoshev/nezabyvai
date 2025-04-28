@@ -1,44 +1,56 @@
 "use client";
 
+// import { useSearchParams } from "next/navigation";
+import { useState, useEffect } from "react";
+
 import { useGetTombsMutation } from "@/redux/services/buralApi";
-import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
 
 const BuralsPage = () => {
-	const searchParams = useSearchParams();
+  // const searchParams = useSearchParams();
 
-	const [search, setSearch] = useState<any>({
-		query: searchParams.get("query") || "",
-		birthday: searchParams.get("birthday") || "",
-		deathday: searchParams.get("maxage") || "",
-		limit: 20,
-		offset: 0,
-	});
+  const [search, setSearch] = useState<any>({
+    // query: searchParams.get("query") || "",
+    // birthday: searchParams.get("birthday") || "",
+    // deathday: searchParams.get("maxage") || "",
+    limit: 20,
+    offset: 0,
+  });
 
-	const [burals, setBurals] = useState<any[]>([]);
+  const [burals, setBurals] = useState<any[]>([]);
 
-	const [getTombs] = useGetTombsMutation();
+  const [getTombs] = useGetTombsMutation(search);
 
-	const getBurals = async () => {
-		await getTombs(search).unwrap().then((res: any) => setBurals(res?.tombs || [])).catch((err) => console.log(err));
-	};
+  const getBurals = async () => {
+    await getTombs(search)
+      .unwrap()
+      .then((res: any) => setBurals(res?.tombs || []))
+      .catch((err) => console.log(err));
+  };
 
-	useEffect(() => {
-		setSearch({
-			...search,
-			query: searchParams.get("query") || "",
-			birthday: searchParams.get("birthday") || "",
-			deathday: searchParams.get("maxage") || "",
-		});
+  useEffect(() => {
+    setSearch({
+      ...search,
+      // query: searchParams.get("query") || "",
+      // birthday: searchParams.get("birthday") || "",
+      // deathday: searchParams.get("maxage") || "",
+    });
 
     getBurals();
 
     console.log(burals);
-	}, [searchParams]);
+  }, []);
 
-	return (
-    <div className="container mx-auto flex flex-col mt-[80px] relative z-10 min-h-screen">
-      Захоронения не найдены
+  return (
+    <div className="min-h-full">
+      <div className="mx-auto container flex flex-col bg-gray rounded-2xl mt-[100px] p-6 px-9">
+        <h2 className="text-[32px] xl:text-[40px] font-semibold text-[#666]">
+          Результаты поиска
+        </h2>
+
+        <div className="mt-6">
+          {burals?.length ? <></> : <div>Захоронений не найдено</div>}
+        </div>
+      </div>
     </div>
   );
 };
