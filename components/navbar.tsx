@@ -92,7 +92,7 @@ export const Navbar = () => {
 
       <div>
         {mobileMenu ? (
-          <div className="fixed top-0 left-0 right-0 bottom-0 bg-white min-h-screen w-full p-8 pt-[100px] flex flex-col gap-8 text-lg">
+          <div className="z-50 fixed top-0 left-0 right-0 bottom-0 bg-white min-h-screen w-full p-8 pt-[100px] flex flex-col gap-8 text-lg">
             <button
               className="cursor-pointer hover:text-primary text-left self-start"
               onClick={onSearch}
