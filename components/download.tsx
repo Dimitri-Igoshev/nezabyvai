@@ -1,8 +1,9 @@
 import { Image } from "@heroui/image";
+import { cn } from "@heroui/theme";
 
-export const Download = () => {
+export const Download = ({ className }: any) => {
   return (
-    <div className="flex items-center gap-7">
+    <div className={cn("flex items-center gap-7", className)}>
       <Image
         alt=""
         className="object-cover cursor-pointer hover:scale-110 transition-all"

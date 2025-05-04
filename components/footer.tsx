@@ -4,8 +4,8 @@ import { EmailIcon, PhoneIcon, TelegramIcon, WhatsAppIcon } from "./icons";
 
 export const Footer = () => {
   return (
-    <div className="hidden lg:block mt-[50px]">
-      <div className="container mx-auto grid grid-cols-3 px-5 gap-[100px]">
+    <div className="mt-[50px]">
+      <div className="container mx-auto grid grid-cols-1 sm:grid-cols-3 px-5 gap-[40px] sm:gap-[100px]">
         <div className="col-span-2 flex flex-col gap-[20px]">
           <p className="font-semibold">Ссылки</p>
 
