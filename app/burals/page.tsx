@@ -47,14 +47,14 @@ const BuralsPage = () => {
 
   return (
     <div className="min-h-screen">
-      <div className="mx-auto container flex flex-col bg-gray rounded-2xl mt-[100px] p-6 px-9">
+      <div className="mx-auto container flex flex-col bg-gray rounded-2xl mt-[100px] p-6">
         <h2 className="text-[32px] xl:text-[40px] font-semibold text-[#666]">
           Результаты поиска
         </h2>
 
         <div className="mt-6 ">
           {burals?.length ? (
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col gap-9 sm:gap-6">
               {burals.map((item: any) => (
                 <BuralCard key={item.id} item={item} />
               ))}

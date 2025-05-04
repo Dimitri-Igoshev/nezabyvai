@@ -8,30 +8,28 @@ interface BuralCardProps {
 }
 
 const BuralCard: FC<BuralCardProps> = ({ item, className }) => {
-  console.log(item);
-
   return (
     <div
       className={cn(
-        "bg-white rounded-[16px] p-2.5 flex gap-5 group cursor-pointer relative",
+        "bg-white rounded-[16px] p-2.5 flex flex-col sm:flex-row gap-5 group cursor-pointer relative",
         className,
       )}
     >
       <Image
         alt=""
-        className="saturate-0 group-hover:saturate-100 transition-all"
-        height={80}
+        className="saturate-0 group-hover:saturate-100 transition-all w-full sm:w-[100px] h-full sm:h-[100px] sm:mx-1"
+        // height={80}
         src="/ph.svg"
-        width={80}
+        // width={80}
       />
 
-      <div className="grid grid-cols-2 w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 w-full mx-3 sm:mx-0">
         <div className="flex flex-col justify-center">
           <p className="text-[20px] font-semibold group-hover:text-primary">{`${item?.d_surname ? item.d_surname + " " : ""}${item?.d_name ? item.d_name + " " : ""}${item?.d_second_name ? item.d_second_name + " " : ""}`}</p>
           <p className="group-hover:text-primary">{`${item.birthday} - ${item?.deathday}`}</p>
         </div>
 
-        <div className="flex flex-col justify-center">
+        <div className="flex flex-col justify-center mt-3 sm:mt-0">
           <p className="text-[20px] group-hover:text-primary capitalize">
             {item.geo_description}
           </p>
