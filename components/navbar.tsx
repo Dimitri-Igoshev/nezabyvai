@@ -94,7 +94,7 @@ export const Navbar = () => {
         {mobileMenu ? (
           <div className="bg-white min-h-screen w-full p-8 pt-[100px] flex flex-col gap-8 text-lg">
             <button
-              className="cursor-pointer hover:text-primary text-left"
+              className="cursor-pointer hover:text-primary text-left self-start"
               onClick={onSearch}
             >
               Поиск
