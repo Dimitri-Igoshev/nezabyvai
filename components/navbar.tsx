@@ -57,7 +57,10 @@ export const Navbar = () => {
         <div className="hidden lg:flex items-center gap-10 text-sm pr-3">
           <button
             className="cursor-pointer hover:text-primary"
-            onClick={onSearch}
+            onClick={() => {
+              onSearch()
+              setMobileMenu(false);
+            }}
           >
             Поиск
           </button>
