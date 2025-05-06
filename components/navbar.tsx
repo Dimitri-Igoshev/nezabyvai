@@ -59,7 +59,6 @@ export const Navbar = () => {
             className="cursor-pointer hover:text-primary"
             onClick={() => {
               onSearch()
-              setMobileMenu(false);
             }}
           >
             Поиск
@@ -98,7 +97,10 @@ export const Navbar = () => {
           <div className="z-40 fixed top-0 left-0 right-0 bottom-0 bg-white min-h-screen w-full p-8 pt-[100px] flex flex-col gap-8 text-lg">
             <button
               className="cursor-pointer hover:text-primary text-left self-start"
-              onClick={onSearch}
+              onClick={() => {
+                onSearch()
+                setMobileMenu(false);
+              }}
             >
               Поиск
             </button>
