@@ -15,7 +15,7 @@ const BuralCard: FC<BuralCardProps> = ({ item, className, onClick }) => {
   return (
     <button
       className={cn(
-        "bg-white rounded-[16px] p-2.5 flex flex-col sm:flex-row gap-5 group cursor-pointer relative text-left",
+        "items-center bg-white rounded-[16px] p-2.5 flex flex-col sm:flex-row gap-5 group cursor-pointer relative text-left",
         className,
       )}
       onClick={onClick}

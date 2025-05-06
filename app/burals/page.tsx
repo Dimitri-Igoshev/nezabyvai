@@ -12,19 +12,12 @@ const BuralsPage = () => {
   const dispatch = useDispatch();
   const search = useSelector((state: any) => state.searchReducer);
 
-  const [query, setQuery] = useState<any>({
-    query: search.query || "",
-    birthday: search.birthday || "",
-    deathday: search.maxage || "",
-    limit: 20,
-    offset: 0,
-  });
-
   const [burals, setBurals] = useState<any[]>([]);
 
   const [getTombs] = useGetTombsMutation(search);
 
   const getBurals = async () => {
+    console.log(333, search);
     await getTombs(search)
       .unwrap()
       .then((res: any) => {
@@ -38,15 +31,9 @@ const BuralsPage = () => {
   };
 
   useEffect(() => {
-    setQuery({
-      ...search,
-      query: search.query || "",
-      birthday: search.birthday || "",
-      deathday: search.maxage || "",
-    });
-
+    console.log(222, search);
     getBurals();
-  }, []);
+  }, [search]);
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 

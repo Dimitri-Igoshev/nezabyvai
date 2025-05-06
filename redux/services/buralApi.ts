@@ -20,9 +20,10 @@ export const buralApi = createApi({
   endpoints: (builder) => ({
     getTombs: builder.mutation({
       query: (body) => ({
-        url: "/search",
+        url: `/search?query=${body?.query || ''}&birthdate=${body?.birthdate || ''}&deathdate=${body?.deathdate || ''}&limit=${body?.limit || 20}&offcet=${body?.offset || 0}`,
         method: "POST",
         body,
+        cache: "no-store",
       }),
     }),
   }),
